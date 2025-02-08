@@ -108,20 +108,152 @@
                             <p id="simulacion">
                             <h1 class="fw-bolder2 mb-4 mt-5 fs-5">Simulación</h1>
                             <p class="fs-6 mb-4">Antes de la implementación física, se utilizará la plataforma WOKWI para simular el comportamiento del circuito. La simulación permitirá verificar la lógica de encendido y apagado del LED, asegurando que el código funcione correctamente antes de cargarlo en el microcontrolador real. Se realizarán pruebas con diferentes condiciones, incluyendo el uso de botones para activar el LED mediante lógica digital con operadores OR y AND.</p>
-                            <figure class="mb-4" align="center"><img class="img-fluid rounded"  width="600px" src="img/ne555.png" alt="imagen simulacion" /></figure>
-                    
-                            <p id="diseño">
-                            <h1 class="fw-bolder2 mb-4 mt-5 fs-5">Diseño</h1>
-                            <p class="fs-6 mb-4"></p>
+                            <h1 class="fw-bolder2 mb-4 mt-5 fs-5">AND</h1>
+                            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                                <iframe src="https://wokwi.com/projects/421468238236878849?embed=1&hideCode=1&hideSidebar=1" 
+                                   style="width: 100%; height: 600px; border: none;"></iframe>
+
+                            </div>
+                            <p class="fs-6 mb-4">Se definen tres pines:
+                                pinGPIO1 (salida).
+                                pinGPIO21 y pinGPIO47 (entradas).
+                                En la función setup(), se configuran los pines:
+                                pinGPIO1 como salida.
+                                pinGPIO21 y pinGPIO47 como entradas.
+                                Se inicializa pinGPIO1 en LOW.
+                                En el loop(), el programa lee los estados de las entradas (state1 y state2).
+                                Se evalúa la condición AND:
+                                Si ambas entradas están en HIGH, la salida pinGPIO1 se activa (HIGH).
+                                Si alguna o ambas entradas están en LOW, la salida permanece en LOW.
+                                Aplicaciones
+                                Simulación de circuitos digitales con compuertas lógicas.
+                                Control de dispositivos que requieren dos condiciones simultáneas para activarse. </p>
                             
-                            <p id="construccion">
+                            
+
+                            <h1 class="fw-bolder2 mb-4 mt-5 fs-5">OR</h1>
+                            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                                <iframe src="https://wokwi.com/projects/421468479456599041?embed=1&hideCode=1&hideSidebar=1" 
+                                   style="width: 100%; height: 600px; border: none;"></iframe>
+
+                            </div>
+                            <p class="fs-6 mb-4">Este código implementa una compuerta lógica OR utilizando un ESP32. Se configuran dos pines (pinGPIO21 y pinGPIO47) como entradas y un pin (pinGPIO1) como salida. En cada iteración del loop(), el microcontrolador lee el estado de las entradas y, si al menos una de ellas está en nivel alto (HIGH), activa la salida estableciéndola en HIGH. En caso contrario, la salida permanece en LOW. </p>
+                            
+
+                            <h1 class="fw-bolder2 mb-4 mt-5 fs-5">BOTÓN</h1>
+                            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                                <iframe src="https://wokwi.com/projects/421466528144142337?embed=1&hideCode=1&hideSidebar=1" 
+                                   style="width: 100%; height: 600px; border: none;"></iframe>
+
+                            </div>
+                            <p class="fs-6 mb-4">Este código implementa un sistema en el que un botón controla el parpadeo de un LED. Se definen dos pines: gpio20, que funciona como entrada para leer el estado del botón, y gpio39, que actúa como salida para controlar el LED. 
+
+                                En la función setup(), se configura gpio20 como entrada y gpio39 como salida. Luego, en el loop(), se lee el estado del botón y, si está presionado (HIGH), el LED parpadea con un retardo de 200 ms entre encendidos y apagados. Si el botón no está presionado (LOW), el LED permanece apagado.</p>
+
+                            <h1 class="fw-bolder2 mb-4 mt-5 fs-5">LED ON</h1>
+                            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                                <iframe src="https://wokwi.com/projects/421466295313024001?embed=1&hideCode=1&hideSidebar=1" 
+                                   style="width: 100%; height: 600px; border: none;"></iframe>
+
+                            </div>
+                            <p class="fs-6 mb-4">Este código establece un pin digital como salida y lo mantiene siempre en estado alto (HIGH).
+
+                                Primero, se define pinGPIO1 como el pin 1. En la función setup(), que se ejecuta una sola vez al inicio, se configura este pin como salida utilizando pinMode(pinGPIO1, OUTPUT). Luego, con digitalWrite(pinGPIO1, HIGH), se enciende el dispositivo conectado a este pin, como un LED.
+                                
+                                La función loop() está vacía, lo que significa que no hay cambios en el comportamiento después de la inicialización. El estado del pin permanecerá alto de manera indefinida.</p>
+                            
+                            <h1 class="fw-bolder2 mb-4 mt-5 fs-5">LED OF</h1>
+                            
+                            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                                <iframe src="https://wokwi.com/projects/421466321189789697?embed=1&hideCode=1&hideSidebar=1" 
+                                   style="width: 100%; height: 600px; border: none;"></iframe>
+
+                            </div>
+                            <p class="fs-6 mb-4">Este código configura un pin digital como salida y cambia su estado después de un tiempo determinado.
+
+                                Al inicio, se define pinGPIO1 como el pin 1. En la función setup(), se configura este pin como salida con pinMode(pinGPIO1, OUTPUT), y luego se establece en estado alto (HIGH), lo que activará el dispositivo conectado, como un LED.
+                                
+                                En la función loop(), que se ejecuta de forma continua, se espera 3 segundos (delay(3000)) y luego el pin se pone en estado bajo (LOW), apagando el dispositivo.</p>
+
+
+                                
+                            <h1 class="fw-bolder2 mb-4 mt-5 fs-5">BLINK</h1>
+                            <p class="fs-6 mb-4">- Protoboard y cables </p>
+                            
+                            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                                <iframe src="https://wokwi.com/projects/421466420260331521?embed=1&hideCode=1&hideSidebar=1" 
+                                   style="width: 100%; height: 600px; border: none;"></iframe>
+
+                            </div>                          
+                    
+                            <!-- <p id="diseño">
+                            <h1 class="fw-bolder2 mb-4 mt-5 fs-5">Diseño</h1>
+                            <p class="fs-6 mb-4"></p> -->
+                            
+                            <!-- <p id="construccion">
                             <h1 class="fw-bolder2 mb-4 mt-5 fs-5">Construcción</h1>
-                            <p class="fs-6 mb-4"></p>
+                            <p class="fs-6 mb-4"></p> -->
 
                         <p id="resultados">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5">- Resultados -</h2>
+                        <h1 class="fw-bolder2 mb-4 mt-5 fs-5">AND</h1>
+                        <p class="fs-6 mb-4">Resultados de la simulación en video</p>
                         <p class="fs-6 mb-4"></p>                        <figure class="mb-4" align="center"><video width="80%"  controls>
-                            <source src="video/Robot.mp4" type="video/mp4">
+                            <source src="video/AND.mp4" type="video/mp4">
+                        </video></p></figure>
+                        <p class="fs-6 mb-4">Resultados del armado en video</p>
+                        <p class="fs-6 mb-4"></p>                        <figure class="mb-4" align="center"><video width="80%"  controls>
+                            <source src="video/ANDReal.mp4" type="video/mp4">
+                        </video></p></figure>
+
+                        <h1 class="fw-bolder2 mb-4 mt-5 fs-5">OR</h1>
+                        <p class="fs-6 mb-4">Resultados de la simulación en video</p>
+                        <p class="fs-6 mb-4"></p>                        <figure class="mb-4" align="center"><video width="80%"  controls>
+                            <source src="video/OR.mp4" type="video/mp4">
+                        </video></p></figure>
+                        <p class="fs-6 mb-4">Resultados del armado en video</p>
+                        <p class="fs-6 mb-4"></p>                        <figure class="mb-4" align="center"><video width="80%"  controls>
+                            <source src="video/ORReal.mp4" type="video/mp4">
+                        </video></p></figure>
+
+                        <h1 class="fw-bolder2 mb-4 mt-5 fs-5">BOTÓN</h1>
+                        <p class="fs-6 mb-4">Resultados de la simulación en video</p>
+                        <p class="fs-6 mb-4"></p>                        <figure class="mb-4" align="center"><video width="80%"  controls>
+                            <source src="video/BOTON.mp4" type="video/mp4">
+                        </video></p></figure>
+                        <p class="fs-6 mb-4">Resultados del armado en video</p>
+                        <p class="fs-6 mb-4"></p>                        <figure class="mb-4" align="center"><video width="80%"  controls>
+                            <source src="video/BOTONReal.mp4" type="video/mp4">
+                        </video></p></figure>
+
+                        <h1 class="fw-bolder2 mb-4 mt-5 fs-5">LED ON</h1>
+                        <p class="fs-6 mb-4">Resultados de la simulación en video</p>
+                        <p class="fs-6 mb-4"></p>                        <figure class="mb-4" align="center"><video width="80%"  controls>
+                            <source src="video/LEDON.mp4" type="video/mp4">
+                        </video></p></figure>
+                        <p class="fs-6 mb-4">Resultados del armado en video</p>
+                        <p class="fs-6 mb-4"></p>                        <figure class="mb-4" align="center"><video width="80%"  controls>
+                            <source src="video/LEDONReal.mp4" type="video/mp4">
+                        </video></p></figure>
+
+                        <h1 class="fw-bolder2 mb-4 mt-5 fs-5">LED OF</h1>
+                        <p class="fs-6 mb-4">Resultados de la simulación en video</p>
+                        <p class="fs-6 mb-4"></p>                        <figure class="mb-4" align="center"><video width="80%"  controls>
+                            <source src="video/LEDOFF.mp4" type="video/mp4">
+                        </video></p></figure>
+                        <p class="fs-6 mb-4">Resultados del armado en video</p>
+                        <p class="fs-6 mb-4"></p>                        <figure class="mb-4" align="center"><video width="80%"  controls>
+                            <source src="video/LEDOFFReal.mp4" type="video/mp4">
+                        </video></p></figure>
+
+                        <h1 class="fw-bolder2 mb-4 mt-5 fs-5">BLINK</h1>
+                        <p class="fs-6 mb-4">Resultados de la simulación en video</p>
+                        <p class="fs-6 mb-4"></p>                        <figure class="mb-4" align="center"><video width="80%"  controls>
+                            <source src="video/BLINK.mp4" type="video/mp4">
+                        </video></p></figure>
+                        <p class="fs-6 mb-4">Resultados del armado en video</p>
+                        <p class="fs-6 mb-4"></p>                        <figure class="mb-4" align="center"><video width="80%"  controls>
+                            <source src="video/BLINKReal.mp4" type="video/mp4">
                         </video></p></figure>
 
                         <p id="conclusiones">
