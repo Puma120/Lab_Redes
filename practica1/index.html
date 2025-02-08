@@ -176,15 +176,23 @@
                                 En la función loop(), que se ejecuta de forma continua, se espera 3 segundos (delay(3000)) y luego el pin se pone en estado bajo (LOW), apagando el dispositivo.</p>
 
 
-                                
+
                             <h1 class="fw-bolder2 mb-4 mt-5 fs-5">BLINK</h1>
-                            <p class="fs-6 mb-4">- Protoboard y cables </p>
                             
                             <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
                                 <iframe src="https://wokwi.com/projects/421466420260331521?embed=1&hideCode=1&hideSidebar=1" 
                                    style="width: 100%; height: 600px; border: none;"></iframe>
 
                             </div>                          
+                            <p class="fs-6 mb-4">Inicialmente, se define pinGPIO1 como el pin 1. En la función setup(), se configura como salida con pinMode(pinGPIO1, OUTPUT), y se inicia en estado bajo (LOW), asegurando que el dispositivo conectado comience apagado.
+
+                                En la función loop(), se ejecuta un ciclo donde:
+
+                                Se espera 500 ms (delay(500)).
+                                Se enciende la salida (digitalWrite(pinGPIO1, HIGH)).
+                                Se espera otros 500 ms.
+                                Se apaga la salida (digitalWrite(pinGPIO1, LOW)).
+                            </p>
                     
                             <!-- <p id="diseño">
                             <h1 class="fw-bolder2 mb-4 mt-5 fs-5">Diseño</h1>
@@ -258,7 +266,11 @@
 
                         <p id="conclusiones">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5">- Conclusiones -</h2>
-                        <p class="fs-6 mb-4"></p>                        
+                        <p class="fs-6 mb-4">A lo largo de esta práctica, se exploró el uso de entradas y salidas digitales en un microcontrolador para implementar diferentes funciones básicas de control. Se programaron circuitos que permitieron desde la activación de un LED con diferentes condiciones lógicas hasta la generación de parpadeos con retardos.</p>       
+                        <p class="fs-6 mb-4">El primer conjunto de ejercicios demostró la implementación de compuertas lógicas mediante programación, utilizando operadores AND y OR para condicionar la activación de una salida en función de dos entradas digitales. Esto permitió observar el comportamiento lógico de estos operadores en un sistema físico, lo que es fundamental en el diseño de circuitos digitales.</p>        
+                        <p class="fs-6 mb-4">Posteriormente, se implementó el control de un LED mediante la lectura de un botón, permitiendo generar un destello cuando el botón se presionaba. Este ejercicio ayudó a comprender la importancia del uso de retardos y la lectura de estados digitales en tiempo real.</p>        
+                        <p class="fs-6 mb-4">Finalmente, se realizaron ejercicios enfocados en la generación de señales temporizadas, desde la activación y desactivación simple de un LED hasta el parpadeo continuo con diferentes intervalos de tiempo. Esto permitió reforzar el uso de retardos (delay) y su impacto en el comportamiento de un sistema embebido.</p>        
+                        <p class="fs-6 mb-4">En conclusión, esta práctica brindó una introducción esencial a la manipulación de pines de entrada y salida en un microcontrolador, estableciendo las bases para el desarrollo de circuitos más complejos en aplicaciones de control digital y automatización.</p>                         
 
                         <p id="referencias">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5">- Referencias -</h2>
@@ -266,9 +278,15 @@
                         
                         <p id="descargables">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5">- Descargables -</h2>
-                        <p class="fs-6 mb-4">Descargar documento PDF: <a href="files/Documento.pdf">documento.pdf</a> </p>
-                        <p class="fs-6 mb-4">Descargar codigo Arduino: <a href="files/Ejemplo_arduino_bluetooth.ino">codigo.ino</a> </p>
-                        <p class="fs-6 mb-4">Descargar Archivo 3d .STL: <a href="files/Pieza_3D.STL">pieza.stl</a> </p>
+                        <!-- <p class="fs-6 mb-4">Descargar documento PDF: <a href="files/Documento.pdf">documento.pdf</a> </p> -->
+                        <p class="fs-6 mb-4">Descargar codigo Practica AND: <a href="files/AND.ino">codigo.ino</a> </p>
+                        <p class="fs-6 mb-4">Descargar codigo Practica OR: <a href="files/OR.ino">codigo.ino</a> </p>
+                        <p class="fs-6 mb-4">Descargar codigo Practica LED ON: <a href="files/LEDON.ino">codigo.ino</a> </p>
+                        <p class="fs-6 mb-4">Descargar codigo Practica LED OFF: <a href="files/LEDOFF.ino">codigo.ino</a> </p>
+                        <p class="fs-6 mb-4">Descargar codigo Practica BLINK: <a href="files/BLINK.ino">codigo.ino</a> </p>
+                        <p class="fs-6 mb-4">Descargar codigo Practica BOTON: <a href="files/BOTON.ino">codigo.ino</a> </p>
+
+                        <!-- <p class="fs-6 mb-4">Descargar Archivo 3d .STL: <a href="files/Pieza_3D.STL">pieza.stl</a> </p> -->
 
                 </div>
             </section>
