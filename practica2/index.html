@@ -53,7 +53,7 @@
                     <!-- Post header-->
                     <header class="mb-4">
                         <!-- Post title-->
-                        <h1 class="fw-bolder mb-1">Wifi ESP32 Entradas y Salidas Digitales”</h1>
+                        <h1 class="fw-bolder mb-1">Wifi ESP32 Entradas y Salidas Digitales</h1>
 
                         <!-- ETIQUETA DE ALUMNO (Hacer una por cada alumno)-->
                             <!-- <img class="img-fluid rounded-circle" width="50px" src="assets/Huber.jpg" alt="FotoGrupal" /> -->
@@ -104,96 +104,47 @@
                                                 
                         <p id="desarrollo">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5">- Desarrollo -</h2>
-                        <p class="fs-6 mb-4">Antes de iniciar, es necesario configurar el entorno de desarrollo en Vokwi o Arduino IDE, según las indicaciones de la presentación y los tutoriales proporcionados.</p>                        
 
                             <p id="simulacion">
                             <h1 class="fw-bolder2 mb-4 mt-5 fs-5">Simulación</h1>
-                            <p class="fs-6 mb-4">Antes de la implementación física, se utilizará la plataforma WOKWI para simular el comportamiento del circuito. La simulación permitirá verificar la lógica de encendido y apagado del LED, asegurando que el código funcione correctamente antes de cargarlo en el microcontrolador real. Se realizarán pruebas con diferentes condiciones, incluyendo el uso de botones para activar el LED mediante lógica digital con operadores OR y AND.</p>
-                            <h1 class="fw-bolder2 mb-4 mt-5 fs-5">AND</h1>
+                            <p class="fs-6 mb-4">Antes de iniciar, es necesario configurar el entorno de desarrollo en Vokwi o Arduino IDE, según las indicaciones de la presentación y los tutoriales proporcionados.</p>
+                            <h1 class="fw-bolder2 mb-4 mt-5 fs-5">PIR</h1>
+                            
                             <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-                                <iframe src="https://wokwi.com/projects/421468238236878849?embed=1&hideCode=1&hideSidebar=1" 
+                                <iframe src="https://wokwi.com/projects/422085779395876865" 
                                    style="width: 100%; height: 600px; border: none;"></iframe>
 
                             </div>
-                            <p class="fs-6 mb-4">Se definen tres pines:
-                                pinGPIO1 (salida).
-                                pinGPIO21 y pinGPIO47 (entradas).
-                                En la función setup(), se configuran los pines:
-                                pinGPIO1 como salida.
-                                pinGPIO21 y pinGPIO47 como entradas.
-                                Se inicializa pinGPIO1 en LOW.
-                                En el loop(), el programa lee los estados de las entradas (state1 y state2).
-                                Se evalúa la condición AND:
-                                Si ambas entradas están en HIGH, la salida pinGPIO1 se activa (HIGH).
-                                Si alguna o ambas entradas están en LOW, la salida permanece en LOW.
-                                Aplicaciones
-                                Simulación de circuitos digitales con compuertas lógicas.
-                                Control de dispositivos que requieren dos condiciones simultáneas para activarse. </p>
+                            <p class="fs-6 mb-4">En este código se espera leer de manera digital la entrada de un sensor de movimiento a base de infrarrojos. Para ello fue necesario determinar dos variables, una la cual guardaría la lectura del sensor y otra la cual determinaría si hay un movimiento en curso, se configuró entonces el GPIO 32 como salida, el GPIO 33 como entrada y se empezó la comunicación serial.  Se lee entonces la señal del sensor Infrarrojo, si esta es alta significa que hay movimiento y se enciende el LED, si no existía un movimiento en curso se marca como que este empezó y se imprime el mensaje correspondiente. Cuando el movimiento pare (la lectura da baja) se checa si existía un movimiento, en caso de que si se apaga el LED y se manda el mensaje correspondiente.</p>
                             
                             
 
-                            <h1 class="fw-bolder2 mb-4 mt-5 fs-5">OR</h1>
+                            <h1 class="fw-bolder2 mb-4 mt-5 fs-5">Sensor inteligente</h1>
                             <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-                                <iframe src="https://wokwi.com/projects/421468479456599041?embed=1&hideCode=1&hideSidebar=1" 
+                                <iframe src="https://wokwi.com/projects/422085116025735169" 
                                    style="width: 100%; height: 600px; border: none;"></iframe>
 
                             </div>
-                            <p class="fs-6 mb-4">Este código implementa una compuerta lógica OR utilizando un ESP32. Se configuran dos pines (pinGPIO21 y pinGPIO47) como entradas y un pin (pinGPIO1) como salida. En cada iteración del loop(), el microcontrolador lee el estado de las entradas y, si al menos una de ellas está en nivel alto (HIGH), activa la salida estableciéndola en HIGH. En caso contrario, la salida permanece en LOW. </p>
+                            <p class="fs-6 mb-4">En este código se espera leer la entrada de un sensor inteligente capaz de determinar la temperatura y humedad (DHT22). Para ello fue necesario importar la biblioteca DHT.h, establecer una variable para la temperatura y otra para la humedad, configurar el GPIO 32 como salida, el GPIO 33 como entrada y empezar la comunicación serial. El cuerpo del código entonces espera 1 segundo, lee y guarda los valores de la humedad y temperatura, los imprime de manera serial y determina si el nivel de humedad es mayor o igual al 50% para encender o apagar un LED.</p>
                             
 
-                            <h1 class="fw-bolder2 mb-4 mt-5 fs-5">BOTÓN</h1>
+                            <h1 class="fw-bolder2 mb-4 mt-5 fs-5">Sensor Analogico</h1>
                             <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-                                <iframe src="https://wokwi.com/projects/421466528144142337?embed=1&hideCode=1&hideSidebar=1" 
+                                <iframe src="https://wokwi.com/projects/422084670964947969" 
                                    style="width: 100%; height: 600px; border: none;"></iframe>
 
                             </div>
-                            <p class="fs-6 mb-4">Este código implementa un sistema en el que un botón controla el parpadeo de un LED. Se definen dos pines: gpio20, que funciona como entrada para leer el estado del botón, y gpio39, que actúa como salida para controlar el LED. 
+                            <p class="fs-6 mb-4">En este código se espera leer analógicamente los valores de entrada provenientes de un potenciómetro. Para ello se decidió determinar el GPIO 33 como entrada, el GPIO 32 como salida e inicializar la comunicación serial en la configuración. El cuerpo del código entonces lee y guarda el valor analógico en una variable, lo imprime de manera serial y determina si este valor es mayor o menor al 50% del valor máximo posible (4095), si lo es el LED en GPIO 33 enciende de lo contrario se apaga.</p>
 
-                                En la función setup(), se configura gpio20 como entrada y gpio39 como salida. Luego, en el loop(), se lee el estado del botón y, si está presionado (HIGH), el LED parpadea con un retardo de 200 ms entre encendidos y apagados. Si el botón no está presionado (LOW), el LED permanece apagado.</p>
-
-                            <h1 class="fw-bolder2 mb-4 mt-5 fs-5">LED ON</h1>
+                            <h1 class="fw-bolder2 mb-4 mt-5 fs-5">Sensor Digital</h1>
                             <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-                                <iframe src="https://wokwi.com/projects/421466295313024001?embed=1&hideCode=1&hideSidebar=1" 
+                                <iframe src="https://wokwi.com/projects/422084438447395841" 
                                    style="width: 100%; height: 600px; border: none;"></iframe>
 
                             </div>
-                            <p class="fs-6 mb-4">Este código establece un pin digital como salida y lo mantiene siempre en estado alto (HIGH).
-
-                                Primero, se define pinGPIO1 como el pin 1. En la función setup(), que se ejecuta una sola vez al inicio, se configura este pin como salida utilizando pinMode(pinGPIO1, OUTPUT). Luego, con digitalWrite(pinGPIO1, HIGH), se enciende el dispositivo conectado a este pin, como un LED.
-                                
-                                La función loop() está vacía, lo que significa que no hay cambios en el comportamiento después de la inicialización. El estado del pin permanecerá alto de manera indefinida.</p>
+                            <p class="fs-6 mb-4">En este código se espera leer una entrada digital en un GPIO y reflejar esta a través de una salida en otro. Para ello se eligió en la configuración el GPIO 33 de la ESP32 como entrada y el GPIO 32 como salida. Se lee entonces una entrada digital de manera constante (el estado de esta determinada por un botón) y se refleja en un led conectado al GPIO 32.</p>
                             
-                            <h1 class="fw-bolder2 mb-4 mt-5 fs-5">LED OF</h1>
-                            
-                            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-                                <iframe src="https://wokwi.com/projects/421466321189789697?embed=1&hideCode=1&hideSidebar=1" 
-                                   style="width: 100%; height: 600px; border: none;"></iframe>
 
-                            </div>
-                            <p class="fs-6 mb-4">Este código configura un pin digital como salida y cambia su estado después de un tiempo determinado.
-
-                                Al inicio, se define pinGPIO1 como el pin 1. En la función setup(), se configura este pin como salida con pinMode(pinGPIO1, OUTPUT), y luego se establece en estado alto (HIGH), lo que activará el dispositivo conectado, como un LED.
-                                
-                                En la función loop(), que se ejecuta de forma continua, se espera 3 segundos (delay(3000)) y luego el pin se pone en estado bajo (LOW), apagando el dispositivo.</p>
-
-
-
-                            <h1 class="fw-bolder2 mb-4 mt-5 fs-5">BLINK</h1>
-                            
-                            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-                                <iframe src="https://wokwi.com/projects/421466420260331521?embed=1&hideCode=1&hideSidebar=1" 
-                                   style="width: 100%; height: 600px; border: none;"></iframe>
-
-                            </div>                          
-                            <p class="fs-6 mb-4">Inicialmente, se define pinGPIO1 como el pin 1. En la función setup(), se configura como salida con pinMode(pinGPIO1, OUTPUT), y se inicia en estado bajo (LOW), asegurando que el dispositivo conectado comience apagado.
-
-                                En la función loop(), se ejecuta un ciclo donde:
-
-                                Se espera 500 ms (delay(500)).
-                                Se enciende la salida (digitalWrite(pinGPIO1, HIGH)).
-                                Se espera otros 500 ms.
-                                Se apaga la salida (digitalWrite(pinGPIO1, LOW)).
-                            </p>
                     
                             <!-- <p id="diseño">
                             <h1 class="fw-bolder2 mb-4 mt-5 fs-5">Diseño</h1>
@@ -205,87 +156,65 @@
 
                         <p id="resultados">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5">- Resultados -</h2>
-                        <h1 class="fw-bolder2 mb-4 mt-5 fs-5">AND</h1>
+                        <h1 class="fw-bolder2 mb-4 mt-5 fs-5">PIR</h1>
                         <p class="fs-6 mb-4">Resultados de la simulación en video</p>
                         <p class="fs-6 mb-4"></p>                        <figure class="mb-4" align="center"><video width="80%"  controls>
-                            <source src="video/AND.mp4" type="video/mp4">
+                            <source src="video/Sensor PIR.mp4" type="video/mp4">
                         </video></p></figure>
                         <p class="fs-6 mb-4">Resultados del armado en video</p>
                         <p class="fs-6 mb-4"></p>                        <figure class="mb-4" align="center"><video width="80%"  controls>
-                            <source src="video/ANDReal.mp4" type="video/mp4">
+                            <source src="video/SensorpirREAL.mp4" type="video/mp4">
                         </video></p></figure>
 
-                        <h1 class="fw-bolder2 mb-4 mt-5 fs-5">OR</h1>
+                        <h1 class="fw-bolder2 mb-4 mt-5 fs-5">Sensor inteligente</h1>
                         <p class="fs-6 mb-4">Resultados de la simulación en video</p>
                         <p class="fs-6 mb-4"></p>                        <figure class="mb-4" align="center"><video width="80%"  controls>
-                            <source src="video/OR.mp4" type="video/mp4">
+                            <source src="video/Sensor Inteligente.mp4" type="video/mp4">
                         </video></p></figure>
                         <p class="fs-6 mb-4">Resultados del armado en video</p>
                         <p class="fs-6 mb-4"></p>                        <figure class="mb-4" align="center"><video width="80%"  controls>
-                            <source src="video/ORReal.mp4" type="video/mp4">
+                            <source src="video/SensorinteligenteREAL.mp4" type="video/mp4">
                         </video></p></figure>
 
-                        <h1 class="fw-bolder2 mb-4 mt-5 fs-5">BOTÓN</h1>
+                        <h1 class="fw-bolder2 mb-4 mt-5 fs-5">Sensor Analogico</h1>
                         <p class="fs-6 mb-4">Resultados de la simulación en video</p>
                         <p class="fs-6 mb-4"></p>                        <figure class="mb-4" align="center"><video width="80%"  controls>
-                            <source src="video/BOTON.mp4" type="video/mp4">
+                            <source src="video/Sensor Analogico.mp4" type="video/mp4">
                         </video></p></figure>
                         <p class="fs-6 mb-4">Resultados del armado en video</p>
                         <p class="fs-6 mb-4"></p>                        <figure class="mb-4" align="center"><video width="80%"  controls>
-                            <source src="video/BOTONReal.mp4" type="video/mp4">
+                            <source src="video/SensorAnalogicoREAL.mp4" type="video/mp4">
                         </video></p></figure>
 
-                        <h1 class="fw-bolder2 mb-4 mt-5 fs-5">LED ON</h1>
+                        <h1 class="fw-bolder2 mb-4 mt-5 fs-5">Sensor Digital</h1>
                         <p class="fs-6 mb-4">Resultados de la simulación en video</p>
                         <p class="fs-6 mb-4"></p>                        <figure class="mb-4" align="center"><video width="80%"  controls>
-                            <source src="video/LEDON.mp4" type="video/mp4">
+                            <source src="video/Sensor Digital.mp4" type="video/mp4">
                         </video></p></figure>
                         <p class="fs-6 mb-4">Resultados del armado en video</p>
                         <p class="fs-6 mb-4"></p>                        <figure class="mb-4" align="center"><video width="80%"  controls>
-                            <source src="video/LEDONReal.mp4" type="video/mp4">
+                            <source src="video/SensordigitalREAL.mp4" type="video/mp4">
                         </video></p></figure>
 
-                        <h1 class="fw-bolder2 mb-4 mt-5 fs-5">LED OF</h1>
-                        <p class="fs-6 mb-4">Resultados de la simulación en video</p>
-                        <p class="fs-6 mb-4"></p>                        <figure class="mb-4" align="center"><video width="80%"  controls>
-                            <source src="video/LEDOFF.mp4" type="video/mp4">
-                        </video></p></figure>
-                        <p class="fs-6 mb-4">Resultados del armado en video</p>
-                        <p class="fs-6 mb-4"></p>                        <figure class="mb-4" align="center"><video width="80%"  controls>
-                            <source src="video/LEDOFFReal.mp4" type="video/mp4">
-                        </video></p></figure>
-
-                        <h1 class="fw-bolder2 mb-4 mt-5 fs-5">BLINK</h1>
-                        <p class="fs-6 mb-4">Resultados de la simulación en video</p>
-                        <p class="fs-6 mb-4"></p>                        <figure class="mb-4" align="center"><video width="80%"  controls>
-                            <source src="video/BLINK.mp4" type="video/mp4">
-                        </video></p></figure>
-                        <p class="fs-6 mb-4">Resultados del armado en video</p>
-                        <p class="fs-6 mb-4"></p>                        <figure class="mb-4" align="center"><video width="80%"  controls>
-                            <source src="video/BLINKReal.mp4" type="video/mp4">
-                        </video></p></figure>
-
+                       
+                        
                         <p id="conclusiones">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5">- Conclusiones -</h2>
-                        <p class="fs-6 mb-4">A lo largo de esta práctica, se exploró el uso de entradas y salidas digitales en un microcontrolador para implementar diferentes funciones básicas de control. Se programaron circuitos que permitieron desde la activación de un LED con diferentes condiciones lógicas hasta la generación de parpadeos con retardos.</p>       
-                        <p class="fs-6 mb-4">El primer conjunto de ejercicios demostró la implementación de compuertas lógicas mediante programación, utilizando operadores AND y OR para condicionar la activación de una salida en función de dos entradas digitales. Esto permitió observar el comportamiento lógico de estos operadores en un sistema físico, lo que es fundamental en el diseño de circuitos digitales.</p>        
-                        <p class="fs-6 mb-4">Posteriormente, se implementó el control de un LED mediante la lectura de un botón, permitiendo generar un destello cuando el botón se presionaba. Este ejercicio ayudó a comprender la importancia del uso de retardos y la lectura de estados digitales en tiempo real.</p>        
-                        <p class="fs-6 mb-4">Finalmente, se realizaron ejercicios enfocados en la generación de señales temporizadas, desde la activación y desactivación simple de un LED hasta el parpadeo continuo con diferentes intervalos de tiempo. Esto permitió reforzar el uso de retardos (delay) y su impacto en el comportamiento de un sistema embebido.</p>        
-                        <p class="fs-6 mb-4">En conclusión, esta práctica brindó una introducción esencial a la manipulación de pines de entrada y salida en un microcontrolador, estableciendo las bases para el desarrollo de circuitos más complejos en aplicaciones de control digital y automatización.</p>                         
+                        <p class="fs-6 mb-4">Mediante esta práctica, se comprendió la diferencia entre sensores digitales, analógicos e inteligentes, así como su integración con el ESP32. Se observó cómo los sensores digitales trabajan con valores binarios, los analógicos proporcionan valores variables y los inteligentes incluyen procesamiento interno. Además, la implementación del sensor PIR permitió conocer su uso en detección de movimiento, lo que amplía sus aplicaciones en seguridad y automatización. Esta práctica refuerza los fundamentos de sensado y procesamiento de datos en sistemas embebidos con WiFi.</p>       
 
                         <p id="referencias">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5">- Referencias -</h2>
-                        <p class="fs-6 mb-4">Carranza, S. (2022, 17 septiembre). CONOCIENDO AL ESP32. TodoMaker. Recuperado 30 de enero de 2025, de https://todomaker.com/blog/conociendo-al-esp32/</p>
-                        
+                        <p class="fs-6 mb-4">Ohms, & Ohms. (2024, 30 julio). ¿Qué es un sensor PIR? - 330ohms. 330ohms. Recuperado 5 de febrero de 2025, de https://www.330ohms.com/blogs/blog/que-es-un-sensor-pir?srsltid=AfmBOooMD_aEcBrlwIa1-pBk4hP47H01H4H4PQ06n5GVeiGJ0Scvz7Tr</p>
+                        <p class="fs-6 mb-4">¿Qué es y cómo funciona un potenciómetro? (s. f.). SDI. Recuperado 5 de febrero de 2025, de https://sdindustrial.com.mx/blog/potenciometro-que-es/#:~:text=El%20potenciómetro%2C%20también%20conocido%20como,con%20su%20posición%20o%20ajuste.</p>
+                        <p class="fs-6 mb-4">Sensor de Temperatura y Humedad Relativa DHT22. (s. f.). Naylamp Mechatronics. Recuperado 5 de febrero de 2025, de https://naylampmechatronics.com/sensores-temperatura-y-humedad/58-sensor-de-temperatura-y-humedad-relativa-dht22-am2302.html</p>
+
                         <p id="descargables">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5">- Descargables -</h2>
                         <!-- <p class="fs-6 mb-4">Descargar documento PDF: <a href="files/Documento.pdf">documento.pdf</a> </p> -->
-                        <p class="fs-6 mb-4">Descargar codigo Practica AND: <a href="files/AND.ino">codigo.ino</a> </p>
-                        <p class="fs-6 mb-4">Descargar codigo Practica OR: <a href="files/OR.ino">codigo.ino</a> </p>
-                        <p class="fs-6 mb-4">Descargar codigo Practica LED ON: <a href="files/LEDON.ino">codigo.ino</a> </p>
-                        <p class="fs-6 mb-4">Descargar codigo Practica LED OFF: <a href="files/LEDOFF.ino">codigo.ino</a> </p>
-                        <p class="fs-6 mb-4">Descargar codigo Practica BLINK: <a href="files/BLINK.ino">codigo.ino</a> </p>
-                        <p class="fs-6 mb-4">Descargar codigo Practica BOTON: <a href="files/BOTON.ino">codigo.ino</a> </p>
+                        <p class="fs-6 mb-4">Descargar codigo Practica PIR: <a href="files/SensorPIR.ino">codigo.ino</a> </p>
+                        <p class="fs-6 mb-4">Descargar codigo Practica Sensor Analogico: <a href="files/SensorAnalogico.ino">codigo.ino</a> </p>
+                        <p class="fs-6 mb-4">Descargar codigo Practica Sensor Digital: <a href="files/SensorDigital.ino">codigo.ino</a> </p>
+                        <p class="fs-6 mb-4">Descargar codigo Practica Sensor Inteligente: <a href="files/SensorInteligente.ino">codigo.ino</a> </p>
 
                         <!-- <p class="fs-6 mb-4">Descargar Archivo 3d .STL: <a href="files/Pieza_3D.STL">pieza.stl</a> </p> -->
 
