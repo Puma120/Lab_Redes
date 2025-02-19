@@ -53,7 +53,7 @@
                     <!-- Post header-->
                     <header class="mb-4">
                         <!-- Post title-->
-                        <h1 class="fw-bolder mb-1">Wifi ESP32 Entradas y Salidas Digitales</h1>
+                        <h1 class="fw-bolder mb-1">Wifi ESP32 Entradas -Thingspeak</h1>
 
                         <!-- ETIQUETA DE ALUMNO (Hacer una por cada alumno)-->
                             <!-- <img class="img-fluid rounded-circle" width="50px" src="assets/Huber.jpg" alt="FotoGrupal" /> -->
@@ -65,10 +65,10 @@
                             </div>
                         <!--Aqui termina etiqueta de alumno-->
 
-                        <div class="text-muted fst-italic mt-2 mb-2">05/02/2025</div>
+                        <div class="text-muted fst-italic mt-2 mb-2">12/02/2025</div>
                         <!-- ETIQUETAS O TOPICOS IMPORTANTES DE LA PRACTICA-->
                         <a class="badge bg-primary text-decoration-none link-light" >ESP32</a>
-                        <a class="badge bg-primary text-decoration-none link-light" >Sensores</a>
+                        <a class="badge bg-primary text-decoration-none link-light" >Wifi</a>
 
                     </header>
                 </div>
@@ -78,19 +78,16 @@
             <section>
                 <div class="container px-5">
 
-                    <figure class="mb-4"><img class="img-fluid rounded" width="800px" src="img/Portada2.png" alt="..." /></figure>
+                    <figure class="mb-4"><img class="img-fluid rounded" width="800px" src="img/SensorInteligenteIMG.jpeg" alt="..." /></figure>
                                 
                     <p id="resumen">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5" >- Resumen -</h2>
-                        <p class="fs-6 mb-4">En esta práctica se explorará el uso de sensores digitales, analógicos e inteligentes utilizando el módulo NodeMCU ESP8266 o ESP32. Se configurará el entorno de desarrollo en Vokwi o Arduino IDE y se implementarán ejemplos para comprender el funcionamiento de un botón (sensor digital), un potenciómetro (sensor analógico) y un sensor DHT22 (sensor inteligente). Además, se desarrollará un programa para monitorear un sensor PIR, permitiendo detectar movimiento. </p>
+                        <p class="fs-6 mb-4">En esta práctica, se explora la integración de la plataforma ThingSpeak con el módulo NodeMCU ESP32 para la recopilación y monitoreo de datos en la nube. Se configuran redes WiFi para la transmisión de información y se conectan sensores digitales, analógicos e inteligentes a ThingSpeak. Además, se extiende el uso del sensor PIR de la práctica anterior para su monitoreo en tiempo real mediante un tablero público en la plataforma.</p>
 
                         <p id="intro">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5" >- Introducción -</h2>
-                        <p class="fs-6 mb-4">Los microcontroladores ESP8266 y ESP32 son herramientas versátiles para la automatización y el desarrollo de sistemas embebidos, especialmente en aplicaciones que involucran comunicación WiFi e interacción con sensores. En esta práctica, se analizarán distintos tipos de sensores y su integración con el ESP32, clasificándolos en tres categorías:</p>
-                        <p class="fs-6 mb-4">-- Sensores digitales: Generan una señal binaria (0 o 1) en respuesta a una condición específica. Un ejemplo es un botón, que indica si está presionado o no.
-                        <p class="fs-6 mb-4">-- Sensores analógicos: Producen una señal de voltaje variable proporcional a una magnitud física. En este caso, se usará un potenciómetro para simular una entrada analógica.</p>
-                        <p class="fs-6 mb-4">-- Sensores inteligentes: Incorporan un procesamiento interno para entregar datos preprocesados. Se utilizará el sensor DHT22, que mide temperatura y humedad.</p>
-                        <p class="fs-6 mb-4">-- Finalmente, se trabajará con el sensor PIR, que detecta movimiento mediante la variación de radiación infrarroja en su entorno.</p>
+                        <p class="fs-6 mb-4">La interconectividad entre sensores y plataformas IoT es fundamental para la automatización y la supervisión remota de sistemas electrónicos. ThingSpeak es una plataforma en la nube que permite visualizar y analizar datos en tiempo real, facilitando su uso en proyectos con microcontroladores como el ESP32 </p>
+                        <p class="fs-6 mb-4">En esta práctica, se configura la conexión del módulo a redes WiFi, se prueban sensores de diferentes tipos y se transmite su información a un tablero público en ThingSpeak, permitiendo la monitorización a distancia.</p>
                         <p class="fs-6 mb-4"></p>
                      
                         <p id="materiales">
@@ -188,57 +185,81 @@
 
                         <p id="resultados">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5">- Resultados -</h2>
-                        <h1 class="fw-bolder2 mb-4 mt-5 fs-5">PIR</h1>
+
+                        <h1 class="fw-bolder2 mb-4 mt-5 fs-5">Escanear Wifi</h1>
                         <p class="fs-6 mb-4">Resultados de la simulación en video</p>
                         <p class="fs-6 mb-4"></p>                        <figure class="mb-4" align="center"><video width="80%"  controls>
-                            <source src="video/Sensor PIR.mp4" type="video/mp4">
+                            <source src="video/EscanearWifi.mp4" type="video/mp4">
                         </video></p></figure>
                         <p class="fs-6 mb-4">Resultados del armado en video</p>
                         <p class="fs-6 mb-4"></p>                        <figure class="mb-4" align="center"><video width="80%"  controls>
-                            <source src="video/SensorpirREAL.mp4" type="video/mp4">
+                            <source src="video/DeteccionWifi.mp4" type="video/mp4">
+                        </video></p></figure>
+
+                        <h1 class="fw-bolder2 mb-4 mt-5 fs-5">Conectar Wifi</h1>
+                        <p class="fs-6 mb-4">Resultados de la simulación en video</p>
+                        <p class="fs-6 mb-4"></p>                        <figure class="mb-4" align="center"><video width="80%"  controls>
+                            <source src="video/ConectarWifi.mp4" type="video/mp4">
+                        </video></p></figure>
+                        <p class="fs-6 mb-4">Resultados del armado en video</p>
+                        <p class="fs-6 mb-4"></p>                        <figure class="mb-4" align="center"><video width="80%"  controls>
+                            <source src="video/ConexionWifi.mp4" type="video/mp4">
+                        </video></p></figure>
+
+                        <h1 class="fw-bolder2 mb-4 mt-5 fs-5">PIR</h1>
+                        <p class="fs-6 mb-4">Resultados de la simulación en video</p>
+                        <p class="fs-6 mb-4"></p>                        <figure class="mb-4" align="center"><video width="80%"  controls>
+                            <source src="video/ThinkspeakPIR.mp4" type="video/mp4">
+                        </video></p></figure>
+                        <p class="fs-6 mb-4">Resultados del armado en video</p>
+                        <p class="fs-6 mb-4"></p>                        <figure class="mb-4" align="center"><video width="80%"  controls>
+                            <source src="video/SensorPIRREAL.mp4" type="video/mp4">
                         </video></p></figure>
 
                         <h1 class="fw-bolder2 mb-4 mt-5 fs-5">Sensor inteligente</h1>
                         <p class="fs-6 mb-4">Resultados de la simulación en video</p>
                         <p class="fs-6 mb-4"></p>                        <figure class="mb-4" align="center"><video width="80%"  controls>
-                            <source src="video/Sensor Inteligente.mp4" type="video/mp4">
+                            <source src="video/ThinkspeakInteligente.mp4" type="video/mp4">
                         </video></p></figure>
                         <p class="fs-6 mb-4">Resultados del armado en video</p>
                         <p class="fs-6 mb-4"></p>                        <figure class="mb-4" align="center"><video width="80%"  controls>
-                            <source src="video/SensorinteligenteREAL.mp4" type="video/mp4">
+                            <source src="video/SensorInteligenteREAL.mp4" type="video/mp4">
                         </video></p></figure>
 
                         <h1 class="fw-bolder2 mb-4 mt-5 fs-5">Sensor Analogico</h1>
                         <p class="fs-6 mb-4">Resultados de la simulación en video</p>
                         <p class="fs-6 mb-4"></p>                        <figure class="mb-4" align="center"><video width="80%"  controls>
-                            <source src="video/Sensor Analogico.mp4" type="video/mp4">
+                            <source src="video/ThinkspeakAnalogico.mp4" type="video/mp4">
                         </video></p></figure>
                         <p class="fs-6 mb-4">Resultados del armado en video</p>
                         <p class="fs-6 mb-4"></p>                        <figure class="mb-4" align="center"><video width="80%"  controls>
-                            <source src="video/SensorAnalogicoREAL.mp4" type="video/mp4">
+                            <source src="video/SensorAnalogicoReal.mp4" type="video/mp4">
                         </video></p></figure>
 
                         <h1 class="fw-bolder2 mb-4 mt-5 fs-5">Sensor Digital</h1>
                         <p class="fs-6 mb-4">Resultados de la simulación en video</p>
                         <p class="fs-6 mb-4"></p>                        <figure class="mb-4" align="center"><video width="80%"  controls>
-                            <source src="video/Sensor Digital.mp4" type="video/mp4">
+                            <source src="video/ThinkspeakDigital.mp4" type="video/mp4">
                         </video></p></figure>
                         <p class="fs-6 mb-4">Resultados del armado en video</p>
                         <p class="fs-6 mb-4"></p>                        <figure class="mb-4" align="center"><video width="80%"  controls>
-                            <source src="video/SensordigitalREAL.mp4" type="video/mp4">
+                            <source src="video/SensorDIGITALREAL.mp4" type="video/mp4">
                         </video></p></figure>
 
                        
                         
                         <p id="conclusiones">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5">- Conclusiones -</h2>
-                        <p class="fs-6 mb-4">Mediante esta práctica, se comprendió la diferencia entre sensores digitales, analógicos e inteligentes, así como su integración con el ESP32. Se observó cómo los sensores digitales trabajan con valores binarios, los analógicos proporcionan valores variables y los inteligentes incluyen procesamiento interno. Además, la implementación del sensor PIR permitió conocer su uso en detección de movimiento, lo que amplía sus aplicaciones en seguridad y automatización. Esta práctica refuerza los fundamentos de sensado y procesamiento de datos en sistemas embebidos con WiFi.</p>       
+                        <p class="fs-6 mb-4">La práctica permitió comprender la importancia de la conexión a redes WiFi en proyectos IoT y la utilidad de plataformas en la nube como ThingSpeak para el monitoreo de sensores. Se logró configurar el módulo ESP32/ESP8266 para enviar datos en tiempo real, facilitando su análisis y visualización. Además, la integración con el sensor PIR permitió aplicar estos conocimientos en un sistema de detección de movimiento accesible desde cualquier dispositivo con conexión a internet.
+
+                        </p>       
 
                         <p id="referencias">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5">- Referencias -</h2>
                         <p class="fs-6 mb-4">Ohms, & Ohms. (2024, 30 julio). ¿Qué es un sensor PIR? - 330ohms. 330ohms. Recuperado 5 de febrero de 2025, de https://www.330ohms.com/blogs/blog/que-es-un-sensor-pir?srsltid=AfmBOooMD_aEcBrlwIa1-pBk4hP47H01H4H4PQ06n5GVeiGJ0Scvz7Tr</p>
                         <p class="fs-6 mb-4">¿Qué es y cómo funciona un potenciómetro? (s. f.). SDI. Recuperado 5 de febrero de 2025, de https://sdindustrial.com.mx/blog/potenciometro-que-es/#:~:text=El%20potenciómetro%2C%20también%20conocido%20como,con%20su%20posición%20o%20ajuste.</p>
                         <p class="fs-6 mb-4">Sensor de Temperatura y Humedad Relativa DHT22. (s. f.). Naylamp Mechatronics. Recuperado 5 de febrero de 2025, de https://naylampmechatronics.com/sensores-temperatura-y-humedad/58-sensor-de-temperatura-y-humedad-relativa-dht22-am2302.html</p>
+                        <p class="fs-6 mb-4">ESP32 WIFI Modo Acces Point – Prometec. (s. f.). Prometec. Recuperado 17 de febrero de 2025, de https://www.prometec.net/wifi-modo-acces-point/</p>
 
                         <p id="descargables">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5">- Descargables -</h2>
