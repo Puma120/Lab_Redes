@@ -65,7 +65,7 @@
                             </div>
                         <!--Aqui termina etiqueta de alumno-->
 
-                        <div class="text-muted fst-italic mt-2 mb-2">19/02/2025</div>
+                        <div class="text-muted fst-italic mt-2 mb-2">26/02/2025</div>
                         <!-- ETIQUETAS O TOPICOS IMPORTANTES DE LA PRACTICA-->
                         <a class="badge bg-primary text-decoration-none link-light" >ESP32</a>
                         <a class="badge bg-primary text-decoration-none link-light" >PHP</a>
@@ -80,22 +80,22 @@
             <section>
                 <div class="container px-5">
 
-                    <figure class="mb-4"><img class="img-fluid rounded" width="800px" src="img/SensorInteligenteIMG.jpeg" alt="..." /></figure>
+                    <figure class="mb-4"><img class="img-fluid rounded" width="800px" src="img/dashboard.jpg" alt="..." /></figure>
                                 
                     <p id="resumen">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5" >- Resumen -</h2>
-                        <p class="fs-6 mb-4">En esta práctica, se explora la integración de la plataforma ThingSpeak con el módulo NodeMCU ESP32 para la recopilación y monitoreo de datos en la nube. Se configuran redes WiFi para la transmisión de información y se conectan sensores digitales, analógicos e inteligentes a ThingSpeak. Además, se extiende el uso del sensor PIR de la práctica anterior para su monitoreo en tiempo real mediante un tablero público en la plataforma.</p>
+                        <p class="fs-6 mb-4">En esta práctica, se integran varios sensores (digital, analógico e inteligente) en un solo proyecto con el ESP32. Los datos de un botón (sensor digital), un potenciómetro (sensor analógico), un DHT22 (sensor de temperatura y humedad) y un PIR (sensor de movimiento) se capturan simultáneamente y se envían a una aplicación web desarrollada en PHP. De esta manera, se puede visualizar en un panel (dashboard) cómo varían los valores de los sensores en tiempo real, aprovechando las capacidades WiFi del microcontrolador ESP32.</p>
 
                         <p id="intro">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5" >- Introducción -</h2>
-                        <p class="fs-6 mb-4">La interconectividad entre sensores y plataformas IoT es fundamental para la automatización y la supervisión remota de sistemas electrónicos. ThingSpeak es una plataforma en la nube que permite visualizar y analizar datos en tiempo real, facilitando su uso en proyectos con microcontroladores como el ESP32 </p>
-                        <p class="fs-6 mb-4">En esta práctica, se configura la conexión del módulo a redes WiFi, se prueban sensores de diferentes tipos y se transmite su información a un tablero público en ThingSpeak, permitiendo la monitorización a distancia.</p>
+                        <p class="fs-6 mb-4">Los proyectos de Internet de las Cosas (IoT) frecuentemente requieren monitorear múltiples variables de forma simultánea y visualizar su evolución en tiempo real. El ESP32, con su conectividad WiFi y gran cantidad de pines de entrada/salida, se convierte en una herramienta ideal para integrar diferentes tipos de sensores y transmitir la información a un servidor remoto.</p>
+                        <p class="fs-6 mb-4">En esta práctica, se profundiza en la conexión simultánea de sensores digitales (botón, PIR), analógicos (potenciómetro) e inteligentes (DHT22) a un ESP32. Además, se emplea un servidor web con un script en PHP para recibir y mostrar los datos de los sensores en un dashboard, brindando la posibilidad de monitoreo remoto y en tiempo real. Esto permite personalizar la forma en que se visualiza la información, sin depender de plataformas de terceros.</p>
                         <p class="fs-6 mb-4"></p>
                      
                         <p id="materiales">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5" >- Materiales -</h2>
-                        <p class="fs-6 mb-4">- Node MCU ESP8266 o ESP32 </p>
-                        <p class="fs-6 mb-4">- LED, resistencia de 220 Ohms </p>
+                        <p class="fs-6 mb-4">- Node MCU ESP32 </p>
+                        <!-- <p class="fs-6 mb-4">- LED, resistencia de 220 Ohms </p> -->
                         <p class="fs-6 mb-4">- Botón y resistencia de 1Khom </p>
                         <p class="fs-6 mb-4">- Sensores: Potenciómetro, DHT22, PIR.  </p>
                         <p class="fs-6 mb-4">- Protoboard y cables </p>
@@ -135,17 +135,17 @@
                         <p id="resultados">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5">- Resultados -</h2>
 
-                        <h1 class="fw-bolder2 mb-4 mt-5 fs-5">Escanear Wifi</h1>
+                        <h1 class="fw-bolder2 mb-4 mt-5 fs-5">Sensores conectados</h1>
                         <p class="fs-6 mb-4">Resultados de la simulación en video</p>
                         <p class="fs-6 mb-4"></p>                        <figure class="mb-4" align="center"><video width="80%"  controls>
-                            <source src="video/EscanearWifi.mp4" type="video/mp4">
+                            <source src="video/wokwi.mp4" type="video/mp4">
                         </video></p></figure>
                         <p class="fs-6 mb-4">Resultados del armado en video</p>
                         <p class="fs-6 mb-4"></p>                        <figure class="mb-4" align="center"><video width="80%"  controls>
-                            <source src="video/DeteccionWifi.mp4" type="video/mp4">
+                            <source src="video/fisico.mp4" type="video/mp4">
                         </video></p></figure>
 
-                        <h1 class="fw-bolder2 mb-4 mt-5 fs-5">Conectar Wifi</h1>
+                        <!-- <h1 class="fw-bolder2 mb-4 mt-5 fs-5">Conectar Wifi</h1>
                         <p class="fs-6 mb-4">Resultados de la simulación en video</p>
                         <p class="fs-6 mb-4"></p>                        <figure class="mb-4" align="center"><video width="80%"  controls>
                             <source src="video/ConectarWifi.mp4" type="video/mp4">
@@ -193,15 +193,14 @@
                         <p class="fs-6 mb-4">Resultados del armado en video</p>
                         <p class="fs-6 mb-4"></p>                        <figure class="mb-4" align="center"><video width="80%"  controls>
                             <source src="video/SensorDIGITALREAL.mp4" type="video/mp4">
-                        </video></p></figure>
+                        </video></p></figure> -->
 
                        
                         
                         <p id="conclusiones">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5">- Conclusiones -</h2>
-                        <p class="fs-6 mb-4">La práctica permitió comprender la importancia de la conexión a redes WiFi en proyectos IoT y la utilidad de plataformas en la nube como ThingSpeak para el monitoreo de sensores. Se logró configurar el módulo ESP32/ESP8266 para enviar datos en tiempo real, facilitando su análisis y visualización. Además, la integración con el sensor PIR permitió aplicar estos conocimientos en un sistema de detección de movimiento accesible desde cualquier dispositivo con conexión a internet.
-
-                        </p>       
+                        <p class="fs-6 mb-4">Esta práctica demuestra la versatilidad del ESP32 al manejar simultáneamente sensores de distintos tipos y transmitir los datos de forma inalámbrica a un servidor web. La combinación de lecturas digitales, analógicas y de sensores inteligentes en un solo dispositivo refleja la potencia de la plataforma en proyectos de IoT más complejos.</p>       
+                        <p class="fs-6 mb-4">Además, la implementación de un servidor PHP para la visualización en tiempo real brinda mayor control y personalización del dashboard, permitiendo adaptar la interfaz según las necesidades específicas del proyecto. Con ello, se sientan las bases para desarrollar sistemas escalables que integren múltiples dispositivos y realicen un monitoreo remoto eficiente.</p>       
 
                         <p id="referencias">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5">- Referencias -</h2>
