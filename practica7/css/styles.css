@@ -11,40 +11,75 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 
- * Carousel base class */
+ /* Carousel base class */
 .carousel {
   margin-bottom: 4rem;
 }
+
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
   bottom: 3rem;
   z-index: 10;
 }
 
-/* Declare heights because of positioning of img element */
+/* Declare heights for carousel items with more flexible adaptation */
 .carousel-item {
-  height: 20rem;
+  height: 50vh; /* Ajuste de altura para mayor flexibilidad */
 }
+
+/* Images inside carousel, adapt to different screen sizes */
 .carousel-item > img {
   position: absolute;
   top: 0;
   left: 0;
-  min-width: 100%;
-  height: 32rem;
+  width: 100%; /* Se ajusta al 100% del contenedor */
+  height: 100%; /* Se ajusta a la altura del contenedor */
+  object-fit: contain; /* Mantiene las proporciones sin recortar */
+  object-position: center center; /* Centra la imagen dentro del contenedor */
 }
+
+/* Slider container */
 .slider-container {
   display: flex;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   width: 100%;
-  height: 80vh; 
+  height: 80vh; /* Altura ajustable según la pantalla */
 }
 
+/* Slider items inside the container */
 .slider-item {
   flex: 0 0 100%;
   scroll-snap-align: center;
-  object-fit: cover;
+  object-fit: contain; /* Mantiene las imágenes dentro del contenedor sin recortes */
+  object-position: center center; /* Centra la imagen dentro de cada slider */
 }
+
+/* Ajustes adicionales para dispositivos móviles */
+@media (max-width: 767px) {
+  .carousel-item {
+    height: 50vh; /* Ajuste para pantallas más pequeñas */
+  }
+
+  .carousel-item > img {
+    object-fit: contain; /* Mantiene la imagen completa en dispositivos móviles */
+    height: auto; /* Ajuste de altura automático */
+    width: 100%; /* Ocupa todo el ancho */
+  }
+}
+
+/* Ajuste para pantallas más grandes */
+@media (min-width: 768px) {
+  .carousel-item {
+    height: 32rem; /* Altura fija para pantallas más grandes */
+  }
+
+  .carousel-item > img {
+    object-fit: contain; /* Mantiene la proporción sin distorsionar */
+    height: 100%; /* Ocupa toda la altura del contenedor */
+  }
+}
+
 .btn-toggle {
   display: inline-flex;
   align-items: center;
@@ -86,6 +121,8 @@
 .btn-toggle-nav a:focus {
   background-color: #d2f4ea;
 }
+
+
 
 /* RESPONSIVE CSS
 -------------------------------------------------- */
